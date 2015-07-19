@@ -17,25 +17,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onAddClick(View a)
-    {
-        if (a.getId() == R.id.Badd)
-        {
-            EditText a1 = (EditText)findViewById(R.id.TFnumber1);
-            EditText a2 = (EditText)findViewById(R.id.TFnumber2);
-
-            double num1,num2;
-            num1 = Double.parseDouble(a1.getText().toString());
-            num2 = Double.parseDouble(a2.getText().toString());
-
-            double ans = num1 + num2;
-
-            TextView t = (TextView) findViewById(R.id.TVresult);
-            t.setText(""+ans);
-        }
-
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
