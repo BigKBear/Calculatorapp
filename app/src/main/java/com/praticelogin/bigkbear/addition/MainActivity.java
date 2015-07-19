@@ -17,6 +17,42 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void onButtonClick(View v)
+    {
+        //create 2 edit text variables for the two text fields
+        EditText a1 = (EditText) findViewById(R.id.TFnum1);
+        EditText a2 = (EditText) findViewById(R.id.TFnum2);
+
+        //result label textview
+        TextView tv = (TextView) findViewById(R.id.Lresult);
+
+        double num1, num2, ans;
+        boolean flag = false;//no division by 0 error
+        num1 = Double.parseDouble(a1.getText().toString());
+        num2 = Double.parseDouble(a1.getText().toString());
+        ans = 0;
+
+        switch (v.getId()){
+        case R.id.Badd:
+            ans = num1 + num2;
+        break;
+        case R.id.Bsub:
+            ans = num1 - num2;
+        break;
+        case R.id.Bmult:
+            ans = num1 * num2;
+        break;
+        case R.id.Bdiv:
+            if(num2 == 0)
+                flag = true;
+            else
+                ans = num1 / num2;
+        break;
+        }
+        tv.setText(ans+"");
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
